@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ホーム画面</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
+</head>
+<body>
+   <div>
+       <div class="home">
+        <h3>ELBook</h3><a class="home-mypage" th:href="@{useredit}">account</a><br>
+        <a class="home-useredit" th:href="@{useredit}">useredit</a><br>
+        <input class="login-name" type="text" placeholder="書籍ID/書籍名"><br>
+        <a class="home-select" th:href="@{usercreate}">検索</a>
+        </div><br>
+        
+        
+        
+        <div class="book-mune">
+            <div class="item">
+              <a>IT技術</a>
+            </div >
+            <div class="item">
+              <a>スポーツ</a>
+            </div >
+            <div class="item">
+              <a>エンタメ</a>
+            </div>
+            <div class="item">
+              <a>教養</a>
+            </div>
+            <div class="item">
+              <a>メンタル</a>
+            </div>
+            <div class="item">
+              <a>パズル</a>
+            </div>
+            
+            
+            
+        </div>
+        
+   </div>
+</body>
+</html>

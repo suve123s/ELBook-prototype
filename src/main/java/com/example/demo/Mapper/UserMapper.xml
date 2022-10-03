@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Mapper.UserMapper">
+<resultMap id="Base_Result_Map"
+		type="com.example.demo.Entity.UserList">
+		<id column="user_id" property="user_id" jdbcType="INTEGER" />
+	</resultMap>
+
+
+<insert id="create"
+		parameterType="com.example.demo.Entity.UserList">
+		INSERT INTO USER (user_name,pass)
+		VALUES(#{user_name}, #{pass});
+		<!--DBにデータ登録 --> 	
+</insert>
+
+
+<select id="userlists" resultMap="Base_Result_Map">
+        SELECT * FROM USER
+</select>
+
+<update id="edit"
+    parameterType="com.example.demo.Entity.UserList">
+    UPDATE USER SET user_name =#{user_name},
+     pass=#{pass}
+    WHERE user_id =#{user_id};
+</update>
+
+<delete id="delete"
+     parameterType="com.example.demo.Entity.UserList">
+     DELETE FROM EL_USER
+     WHERE user_id =#{user_id};
+</delete>
+
+<select id="targetuser" resultMap="Base_Result_Map"
+     parameterType="com.example.demo.Entity.UserList">
+     SELECT * FROM USER WHERE user_id =#{userR_id};
+</select>
+
+
+
+
+</mapper>

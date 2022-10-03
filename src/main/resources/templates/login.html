@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+ <title>認証画面</title>
+ <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
+</head>
+
+ <body>
+ <div class="kkkk">
+
+ <!--th:href=@{ｘｘ}でxxに遷移する -->
+ <!-- コントローラ -->
+
+         <div class="fice">
+          <h1 class="main"><img class="hon" src="images/book_sasshi7_black.png">ELBook</h1>
+            <input type="checkbox" name="operater" value="管理者" class="operater">
+            <label for="operater">管理者</label><br>
+            <input class="login-name" type="text" placeholder="ID/Name"><br>
+            <input class="login-pass" type="text" placeholder="Password"><br><br>
+            <a class="button" th:href="@{home}">Login</a>
+          <div class=aaaaaa>
+          <a class="new" th:href="@{usercreate}">新規登録</a>
+          </div>
+   
+   
+        </div>
+      </div>
+   </body>
+</html>

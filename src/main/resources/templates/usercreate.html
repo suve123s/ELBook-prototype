@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+  <meta charset="UTF-8">
+  <title>新規登録画面</title>
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
+</head>
+<body>
+
+  <div id="touroku-home" class="ttttt-big">
+    
+      <h4 class ="ideeee">新規登録画面</h4>
+      <form th:action="@{/usercreate}" th:object="${createUser}" class="user-create" method="post">
+      <div class="aaaa">
+         <input class="nameee" type="text" name="user_name" id="user_name" placeholder="Name"><br>
+      </div>
+      <div class="aaaa">   
+         <input class="newpass" type="text" name="pass" id="pass" placeholder="NewPassword"><br><br>
+      </div>  
+         <button type="submit" class="bottom-bbb">登録</button>
+     </form>
+  </div>
+
+</body>
+</html>
