@@ -6,8 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BookController {
   
-	@GetMapping("/")
-	public String getindex() {
-	return "index";
+	@GetMapping("/bookinfo")
+	public String getbookinfo() {
+	return "bookinfo";
 	}
+	
+	
+	
+	
 }

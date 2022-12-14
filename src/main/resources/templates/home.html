@@ -8,14 +8,16 @@
 <body>
    <div>
        <div class="home">
-        <h3>ELBook</h3><a class="home-mypage" th:href="@{useredit}">account</a><br>
-        <a class="home-useredit" th:href="@{useredit}">useredit</a><br>
+        <h3>ELBook</h3>
+        <a class="home-mypage" th:href="@{mypage}">マイページ</a><br>
+        <a class="home-userinfo" th:href="@{userinfo}">社員一覧</a><br>
+        <a class="home-booklist" th:href="@{booklist}">書籍一覧</a><br>
         <input class="login-name" type="text" placeholder="書籍ID/書籍名"><br>
         <a class="home-select" th:href="@{usercreate}">検索</a>
         </div><br>
-        
-        
-        
+
+
+
         <div class="book-mune">
             <div class="item">
               <a>IT技術</a>
@@ -35,11 +37,11 @@
             <div class="item">
               <a>パズル</a>
             </div>
-            
-            
-            
+
+
+
         </div>
-        
+
    </div>
 </body>
 </html>

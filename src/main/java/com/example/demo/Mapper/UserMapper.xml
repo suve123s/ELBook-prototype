@@ -13,9 +13,15 @@
 		parameterType="com.example.demo.Entity.UserList">
 		INSERT INTO USER (user_name,pass)
 		VALUES(#{user_name}, #{pass});
-		<!--DBにデータ登録 --> 	
+		<!--DBにデータ登録 -->
 </insert>
 
+<delete id="delete"
+     parameterType="com.example.demo.Entity.UserList">
+     DELETE FROM USER
+     WHERE user_id =#{user_id};
+     <!--DBからデータを削除-->
+</delete>
 
 <select id="userlists" resultMap="Base_Result_Map">
         SELECT * FROM USER
@@ -28,15 +34,11 @@
     WHERE user_id =#{user_id};
 </update>
 
-<delete id="delete"
-     parameterType="com.example.demo.Entity.UserList">
-     DELETE FROM EL_USER
-     WHERE user_id =#{user_id};
-</delete>
+
 
 <select id="targetuser" resultMap="Base_Result_Map"
      parameterType="com.example.demo.Entity.UserList">
-     SELECT * FROM USER WHERE user_id =#{userR_id};
+     SELECT * FROM USER WHERE user_id =#{user_id};
 </select>
 
 
