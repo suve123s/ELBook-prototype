@@ -14,9 +14,9 @@
     <form th:action="@{/bookedit}" class="book-edit" th:method="post">
         <div><input th:value="${book_edit.book_id}" class="edit-newid" type="hidden" name="book_id" id="book_edit"></div><br>
         <div>
-          <input class="edit-newname"  name="book_name" id="book_name"><br>
-          <input class="edit-newpass"  name="pass" id="pass"><br><br>
-        </div>
+          <p>現在の書籍の在庫数を入力</p><input class="edit-stock" type="text" name="stock" id="stock" placeholder="正しい在庫数"><br>
+          <p>現在の書籍の貸出数を入力</p><input class="edit-rent"  type="text" name="rent" id="rent" placeholder="正しい貸出数"><br><br>
+       </div>
           <button type="submit" class="bottom-ccc">変更</button>
     </form>
     

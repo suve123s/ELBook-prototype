@@ -13,8 +13,8 @@
     <form th:action="@{/useredit}" class="user-edit" th:method="post">
         <div><input th:value="${user_edit.user_id}" class="edit-newid" type="hidden" name="user_id" id="user_edit"></div><br>
         <div>
-          <input class="edit-newname" type="text" name="user_name" id="user_name" placeholder="NewName"><br>
-          <input class="edit-newpass" type="text" name="pass" id="pass" placeholder="NewPassword"><br><br>
+          <p>新しいお名前を入力してください</p><input class="edit-newname" type="text" name="user_name" id="user_name" placeholder="NewName"><br>
+          <p>新しいパスワードを入力してください</p><input class="edit-newpass" type="text" name="pass" id="pass" placeholder="NewPassword"><br><br>
         </div>
           <button type="submit" class="bottom-ccc">変更</button>
     </form>
