@@ -25,13 +25,58 @@ public class BookController {
 		return "bookinfo";
 	}
 	
-//	@PostMapping("/delete/{book_id}")
-//	public String move
+	@GetMapping("/bookedit/{book_id}")
+	public String movebookedit() {
+		return "bookedit";
+	}
+	
+	@GetMapping("/bookedit")
+	public String moveBookedit() {
+	    System.out.println();
+	    return "bookedit";
+    }    
+	
+	
+	
+	@PostMapping("/bookedit")
+	public String bookEdit() {
+		return "bookinfo";
+	}
+	
  
 	@PostMapping("/bookinfo")
-	public String userInfo(@ModelAttribute ("editUser") BookList bookList) {
+	public String bookInfo(@ModelAttribute ("editBook") BookList bookList) {
 		bookService.book_edit(bookList);
 		System.out.println("社員一覧画面に遷移しました");
 		return "bookinfo";
 	}
+	
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

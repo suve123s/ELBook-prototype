@@ -38,7 +38,7 @@ public class UserService {
 	}
 
 	public List<UserList>lists(){
-		System.out.println("UserListについて処理しています");
+		System.out.println("ユーザー情報を取得します");
 		return userMapper.userlists();
 	}
 

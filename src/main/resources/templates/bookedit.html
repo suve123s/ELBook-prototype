@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>書籍情報編集</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
+</head>
+<body>
+                                          //th:eachでデータを引っ張ってくる
+                                         　//model.addAttributeで記述する
+　　<div id="hensyu-book" class="book-edit" th:each="book_edit:${}">
+
+      <h4 class ="idook">書籍情報編集画面</h4>
+    <form th:action="@{/bookedit}" class="book-edit" th:method="post">
+        <div><input th:value="${book_edit.book_id}" class="edit-newid" type="hidden" name="book_id" id="book_edit"></div><br>
+        <div>
+          <input class="edit-newname"  name="book_name" id="book_name"><br>
+          <input class="edit-newpass"  name="pass" id="pass"><br><br>
+        </div>
+          <button type="submit" class="bottom-ccc">変更</button>
+    </form>
+  </div>
+
+</body>
+</html>

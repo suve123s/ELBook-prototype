@@ -10,6 +10,7 @@ public class UserList {
 	private String user_name;
 	private String pass;
 	private int operator;
+	
 
 
 	public int getUser_id() {

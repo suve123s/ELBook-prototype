@@ -51,26 +51,20 @@ public class UserController {
 		return "userinfo";
 	}
 	
-//	@GetMapping("/bookinfo")
-//	public String movebooklist(Model model){
-//		model.addAttribute("BookList",bookService.bookfile());
-//		System.out.println("本の一覧に遷移しました");
-//		return "bookinfo";
-//	}
 
     //   ユーザー情報の削除処理
 	@GetMapping("/delete/{user_id}")
- 	public String userEdit(@PathVariable int user_id,Model model) {
+ 	public String userDelete(@PathVariable int user_id,Model model) {
 		 model.addAttribute("TargetUser", userService.targetuser(user_id));
-		 System.out.println("user_idを渡す");
+		 System.out.println("ユーザーID[ "+ user_id +" ]を/deleteに渡して削除実行");
 		 return "userinfo";
      }
 
 	//   ユーザー情報の編集処理
 	@GetMapping("/useredit/{user_id}")
-	public String moveEdit(@PathVariable int user_id) {
-		System.out.println(user_id);
-        System.out.println("user_idをeditに渡す");
+	public String moveEdit(@PathVariable int user_id,Model model) {
+		model.addAttribute("Edituser", userService.targetuser(user_id));
+        System.out.println("ユーザーID[ "+ user_id +" ]を/usereditに渡して編集実行");
 		return "useredit";
 	}
 
@@ -83,6 +77,7 @@ public class UserController {
 		System.out.println("新規画面に遷移しました");
 		return "usercreate";
 	}
+	
     //マイページに遷移
 	@GetMapping("/mypage")
 	public String moveMypage() {
@@ -91,18 +86,12 @@ public class UserController {
 	}
 
     //編集画面に遷移
-	@GetMapping("/useredit")
-	public String moveUseredit(@ModelAttribute("user_edit") UserList useList) {
-		System.out.println("編集画面に遷移しました");
-		return "useredit";
-	}
+//	@GetMapping("/useredit")
+//	public String moveUseredit(@ModelAttribute("user_edit") UserList useList) {
+//		System.out.println("編集画面に遷移しました");
+//		return "useredit";
+//	}
 
-//    @GetMapping("/Test2")
-//    public String moveTest2() {
-//    	System.out.println("テスト２");
-//    	return "Test2";
-//    			 
-//    }
 
 	 //テスト用
 	@GetMapping("/Test")
@@ -138,12 +127,12 @@ public class UserController {
 		return "home";
 	}
 
-	@PostMapping("/userinfo")            //↓th:object="${editUser}"で飛んでくる
-	 public String userInfo(@ModelAttribute ("editUser") UserList userList) {
-	       userService.edit(userList);
-	       System.out.println("社員一覧画面に遷移しました");
-	       return "userinfo";
-	}
+//	@PostMapping("/userinfo")            //↓th:object="${editUser}"で飛んでくる
+//	 public String userInfo(@ModelAttribute ("editUser") UserList userList) {
+//	       userService.edit(userList);
+//	       System.out.println("社員一覧画面に遷移しました");
+//	       return "userinfo";
+//	}
 
 }
 

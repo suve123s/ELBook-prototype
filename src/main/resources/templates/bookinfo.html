@@ -11,11 +11,23 @@
 	</div>
    <table class="table" th:each="book:${BookList}">
         <tr>
-           <td th:text="${book.book_id}"></td><td>,</td>
-           <td th:text="${book.book_name}"></td><td>,</td>
-           <td th:text="${book.genre}"></td><td>,</td>
-           <td th:text="${book.stock}"></td><td>,</td>
-           <td th:text="${book.rent}"></td>
+           <th th:text="${book.book_id}"></th><th>,</th>
+           <th th:text="${book.book_name}"></th><th>,</th>
+           <th th:text="${book.genre}"></th><th>,</th>
+           <th th:text="${book.stock}"></th><th>,</th>
+           <th th:text="${book.rent}"></th>
+           
+           <!--編集ボタン-->
+           <th>
+           <a th:href="@{/bookedit/{book_id}(book_id=*{book.book_id})}">編集</a>
+           </th>
+           <!--削除ボタン-->
+           <!--<th>
+           　　<form th:action="@{/delete}" th:object="${user_delete}"  method="post">
+			    <input type="submit"   class="btn-delete" name="delete" value="削除">
+				<input type="hidden" name="book_id" th:value="${book.book_id}">
+             </form>
+           </th>-->
         </tr>
      </table>
 </body>
