@@ -10,7 +10,7 @@
 	</div>
 	<div>
 		<p>社員一覧</p>
-      <table class="table" th:each="user:${UserList}" >
+      <table class="table" th:each="user:${UserFolder}" >
           <!--　th:eachはくり返し表示　-->
 			<tr>
 				<th th:text="${user.user_id}"></th>

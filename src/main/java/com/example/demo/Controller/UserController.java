@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.Entity.UserList;
+import com.example.demo.Service.BookService;
 import com.example.demo.Service.UserService;
 
 // コントローラを作る時必ず定義すること
@@ -17,6 +18,7 @@ public class UserController {
 
 	@Autowired
 	UserService userService;
+	BookService bookService;
 	
 
 
@@ -27,32 +29,36 @@ public class UserController {
 //		return "login";遷移したHTMLを指定
 //	}
 
-
+    //認証画面表示処理
 	@GetMapping("/login")
 	public String login() {
 		System.out.println("認証画面を表示");
 		return "login";
 	}
-
+	
+     // home画面への遷移
 	@GetMapping("/home")
 	public String home() {
 		System.out.println("HOME画面に遷移しました");
 		return "home";
 	}
-
+     
+	//  ユーザーの一覧表示処理
 	@GetMapping("/userinfo")
 	public String findUser(Model model) {
-		model.addAttribute("UserList", userService.lists());
+		model.addAttribute("UserFolder", userService.lists());
 		System.out.println("ユーザー一覧を表示");
 		return "userinfo";
 	}
+	
+//	@GetMapping("/bookinfo")
+//	public String movebooklist(Model model){
+//		model.addAttribute("BookList",bookService.bookfile());
+//		System.out.println("本の一覧に遷移しました");
+//		return "bookinfo";
+//	}
 
-	@GetMapping("/booklist")
-	public String movebooklist() {
-		System.out.println("ブックリスト画面に遷移");
-		return "booklist";
-	}
-
+    //   ユーザー情報の削除処理
 	@GetMapping("/delete/{user_id}")
  	public String userEdit(@PathVariable int user_id,Model model) {
 		 model.addAttribute("TargetUser", userService.targetuser(user_id));
@@ -60,6 +66,7 @@ public class UserController {
 		 return "userinfo";
      }
 
+	//   ユーザー情報の編集処理
 	@GetMapping("/useredit/{user_id}")
 	public String moveEdit(@PathVariable int user_id) {
 		System.out.println(user_id);
@@ -68,7 +75,7 @@ public class UserController {
 	}
 
 
-
+    //新規ユーザー情報の登録
 	//GetMappingで遷移
 	//return 〇〇 で　〇〇が帰ってくる
 	@GetMapping("/usercreate")
@@ -90,7 +97,12 @@ public class UserController {
 		return "useredit";
 	}
 
-
+//    @GetMapping("/Test2")
+//    public String moveTest2() {
+//    	System.out.println("テスト２");
+//    	return "Test2";
+//    			 
+//    }
 
 	 //テスト用
 	@GetMapping("/Test")

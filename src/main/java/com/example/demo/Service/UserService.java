@@ -43,9 +43,6 @@ public class UserService {
 	}
 
 
-
-
-
 	public List<UserList> targetuser(int user_id){
 		return userMapper.targetuser(user_id);
 	}

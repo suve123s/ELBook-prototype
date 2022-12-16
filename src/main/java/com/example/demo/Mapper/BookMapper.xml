@@ -1,1 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Mapper.BookMapper">
+<resultMap id="Base_Result_Map"
+		type="com.example.demo.Entity.BookList">
+		<id column="book_id" property="book_id" jdbcType="INTEGER" />
+</resultMap>
+
+            <!-- 新書籍の登録 -->
+<insert id="book_entry"
+		parameterType="com.example.demo.Entity.BookList">
+		INSERT INTO BOOK (book_name,genre,stock,rent)
+		VALUES(#{book_name},#{genre},#{stock},0);
+		<!--DBにデータ登録 -->
+</insert>
+  
+            <!-- 書籍情報の削除 -->
+<delete id="book_delete"
+     parameterType="com.example.demo.Entity.BookList">
+     DELETE FROM BOOK
+     WHERE book_id =#{book_id};
+     <!--DBからデータを削除-->
+</delete>
+ 
+            <!-- 全書籍の情報 -->
+<select id="bookfile" resultMap="Base_Result_Map">
+        SELECT * FROM BOOK;
+</select>
+   
+             <!-- 書籍の情報編集 -->
+<update id="book_edit"
+    parameterType="com.example.demo.Entity.BookList">
+    UPDATE BOOK SET stock =#{stock},
+     rent=#{rent}
+    WHERE book_id =#{book_id};
+</update>
+
+            <!-- 特定の書籍を検索する -->
+<select id="searchbook" resultMap="Base_Result_Map"
+     parameterType="com.example.demo.Entity.BookList">
+     SELECT * FROM book WHERE book_id =#{book_id};
+</select>
+
+
+
+
+
+
+</mapper>

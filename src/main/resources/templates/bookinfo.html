@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>本の一覧</title>
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 </head>
 <body>
 　　<div>
-		<h3>BookList</h3>
+		<h3>書籍一覧表示</h3>
 	</div>
-     <table th:text="table" th:each="user:{UserList}">
+   <table class="table" th:each="book:${BookList}">
         <tr>
-           <th th:text="${book.book_id}"></th>
-           <th th:text="${book.book_name}"></th>
-           <th th:text="${book.genre}"></th>
-           <th th:text="${book.stock}"></th>
-           <th th:text="${book.rent}"></th>
+           <td th:text="${book.book_id}"></td><td>,</td>
+           <td th:text="${book.book_name}"></td><td>,</td>
+           <td th:text="${book.genre}"></td><td>,</td>
+           <td th:text="${book.stock}"></td><td>,</td>
+           <td th:text="${book.rent}"></td>
         </tr>
      </table>
 </body>
