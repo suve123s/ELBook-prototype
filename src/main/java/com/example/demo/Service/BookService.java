@@ -20,7 +20,7 @@ public class BookService {
                //新規の書籍情報を登録
 	public void book_entry() {
 		System.out.println();
-		System.out.println("書籍の登録処理をしています");
+		System.out.println("新規書籍登録処理をしています");
 		//bookMapper.
 	}
                   //本一覧の情報を取得
@@ -29,11 +29,24 @@ public class BookService {
 		return bookMapper.bookfile();
 	}
 	
+	public List<BookList>searchbook(int book_id){
+		System.out.println("[ " + book_id + " ]の情報を取得します。");
+		return bookMapper.searchbook(book_id);
+	}
+	
 	public void book_edit(BookList bookList) {
-        System.out.println(bookList);
         bookMapper.book_edit(bookList);
-        System.out.print("編集処理をしています");
+        System.out.print("[ " + bookList + " ]の情報を編集処理をしています");
+	}
+	public void book_entry(BookList bookList) {
+		bookMapper.book_entry(bookList);
+		System.out.println("[ " + bookList + " ]の情報を登録処理しています");
+		
 	}
 
+	public void book_dlt(BookList bookList) {
+		bookMapper.book_delete(bookList);
+		System.out.println("[ " + bookList + " ]の情報を削除処理しています");
+	}
 
 }

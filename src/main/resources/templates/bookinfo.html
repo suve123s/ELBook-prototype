@@ -8,7 +8,7 @@
 <body>
 　　<div>
 		<h3>書籍一覧表示</h3>
-	</div>
+	</div>            <!--th:eachでmodel.addAttributeで飛ばしたデータを受け取る-->
    <table class="table" th:each="book:${BookList}">
         <tr>
            <th th:text="${book.book_id}"></th><th>,</th>
@@ -22,12 +22,12 @@
            <a th:href="@{/bookedit/{book_id}(book_id=*{book.book_id})}">編集</a>
            </th>
            <!--削除ボタン-->
-           <!--<th>
-           　　<form th:action="@{/delete}" th:object="${user_delete}"  method="post">
-			    <input type="submit"   class="btn-delete" name="delete" value="削除">
+           <th>
+			<form th:action="@{/book_delete}" th:object="${book_delete}"  method="post">
+				<input type="submit"   class="btn-delete" name="delete" value="削除">
 				<input type="hidden" name="book_id" th:value="${book.book_id}">
-             </form>
-           </th>-->
+			</form>
+		   </th>
         </tr>
      </table>
 </body>

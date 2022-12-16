@@ -53,18 +53,18 @@ public class UserController {
 	
 
     //   ユーザー情報の削除処理
-	@GetMapping("/delete/{user_id}")
- 	public String userDelete(@PathVariable int user_id,Model model) {
-		 model.addAttribute("TargetUser", userService.targetuser(user_id));
-		 System.out.println("ユーザーID[ "+ user_id +" ]を/deleteに渡して削除実行");
-		 return "userinfo";
-     }
+//	@GetMapping("/delete/{user_id}")
+// 	public String userDelete(@PathVariable int user_id,Model model) {
+//		 model.addAttribute("TargetUser", userService.targetuser(user_id));
+//		 System.out.println("ユーザーID[ "+ user_id +" ]を/deleteに渡して削除に移行します");
+//		 return "userinfo";
+//     }
 
 	//   ユーザー情報の編集処理
 	@GetMapping("/useredit/{user_id}")
 	public String moveEdit(@PathVariable int user_id,Model model) {
 		model.addAttribute("Edituser", userService.targetuser(user_id));
-        System.out.println("ユーザーID[ "+ user_id +" ]を/usereditに渡して編集実行");
+        System.out.println("ユーザーID[ "+ user_id +" ]を/usereditに渡して編集に移行します");
 		return "useredit";
 	}
 
@@ -74,7 +74,7 @@ public class UserController {
 	//return 〇〇 で　〇〇が帰ってくる
 	@GetMapping("/usercreate")
 	public String moveusercreate() {
-		System.out.println("新規画面に遷移しました");
+		System.out.println("新規登録画面に遷移しました");
 		return "usercreate";
 	}
 	
@@ -103,27 +103,24 @@ public class UserController {
              //新規登録機能（ユーザーとパスワードを登録できる）
 	@PostMapping("/usercreate")
 	public String userCreate (@ModelAttribute UserList userList) {
-		System.out.println("登録OKです。登録処理１");
 		userService.create(userList);
-		System.out.println("登録しました。登録処理3");
+		System.out.println("登録処理が完了しました");
 		return "login";
 	}
 
 	           //th:action〇〇で飛ぶ   //ユーザー情報の編集
 	@PostMapping("/useredit")
 	public String userEdit(@ModelAttribute  UserList userList) {
-		System.out.println("編集処理を行っています。編集処理１");
 		userService.edit(userList);
-		System.out.println("編集処理を行っています。編集処理３");
+		System.out.println("編集処理が完了しました");
 		return "userinfo";
 	}
 
 	//th:action="@{/delete}"で飛んでくる
 	@PostMapping("/delete")      //↓th:object="${user_delete}"で飛んでくる
-	public String userDelete(@ModelAttribute("user_delete") UserList userList) {
+	public String userDelete(@ModelAttribute UserList userList) {
 		userService.delete(userList);
-		System.out.println("deleteController");
-		System.out.println(userList);
+		System.out.println("削除処理を完了しました");
 		return "home";
 	}
 

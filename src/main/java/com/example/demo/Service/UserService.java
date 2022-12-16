@@ -20,30 +20,28 @@ public class UserService {
 
 
 	public void create(UserList userList) {
-		System.out.println(userList);
-		System.out.println("登録処理しています。登録処理２");
 		userMapper.create(userList);
+		System.out.println("[ " + userList + " ]について登録処理しています");
 	}
 
 	public void edit(UserList userList) {
-		System.out.println(userList);
 		userMapper.edit(userList);
-		System.out.println("編集処理をしています。編集処理２");
+		System.out.println("[ " + userList + " ]について編集処理をしています");
 	}
 
 	public void delete(UserList userList) {
 		userMapper.delete(userList);
-		System.out.println(userList);
-		System.out.println("削除処理しています");
+		System.out.println("[ " + userList + " ]について削除処理しています");
 	}
 
 	public List<UserList>lists(){
-		System.out.println("ユーザー情報を取得します");
+		System.out.println("全ユーザー情報を取得します");
 		return userMapper.userlists();
 	}
 
 
 	public List<UserList> targetuser(int user_id){
+		System.out.println("[ " + user_id + " ]の情報を取得しました");
 		return userMapper.targetuser(user_id);
 	}
 

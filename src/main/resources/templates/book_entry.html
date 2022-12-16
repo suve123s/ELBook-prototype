@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+  <meta charset="UTF-8">
+  <title>新書籍登録画面</title>
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 </head>
 <body>
+
+  <div id="touroku-home" class="ttttt-big">
+
+      <h4 class ="ideeee">新書籍登録画面</h4>
+      <form th:action="@{/book_entry}" class="book-create" method="post">
+      <div class="aaaa">
+         <input class="nameee" type="text" name="book_name" id="book_name" placeholder="BookName"><br>
+      </div>
+      <div class="aaaa">
+         <input class="genree" type="text" name="genre" id="genre" placeholder="Genre"><br>
+      </div>
+      <div class="aaaa">
+         <input class="Bookstock" type="text" name="stock" id="stock"><br><br>         
+      </div>
+      
+         <button type="submit" class="bottom-bbb">登録</button>
+     </form>
+  </div>
 
 </body>
 </html>

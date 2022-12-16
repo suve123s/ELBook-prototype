@@ -6,9 +6,9 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 </head>
 <body>
-                                          //th:eachでデータを引っ張ってくる
-                                         　//model.addAttributeで記述する
-　　<div id="hensyu-book" class="book-edit" th:each="book_edit:${}">
+                                          <!--th:eachでデータを引っ張ってくる
+                                         　  model.addAttributeでControllerに記述する-->
+　　<div id="hensyu-book" class="book-edit" th:each="book_edit:${BookEdit}">
 
       <h4 class ="idook">書籍情報編集画面</h4>
     <form th:action="@{/bookedit}" class="book-edit" th:method="post">
@@ -19,6 +19,8 @@
         </div>
           <button type="submit" class="bottom-ccc">変更</button>
     </form>
+    
+    
   </div>
 
 </body>
