@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title},~{::body})}">
 <head>
  <meta charset="UTF-8">
  <title>認証画面</title>
@@ -14,12 +14,25 @@
  <!-- コントローラ -->
 
        
-          <h1 class="main"><img class="hon" src="images/book_sasshi7_black.png">ELBook</h1>
+          <h1 class="mt-3"><img class="hon" src="images/book_sasshi7_black.png">ELBook</h1>
+          
             <input type="checkbox" name="operater" value="管理者" class="operater">
             <label for="operater">管理者</label><br>
+            
+            <div class="mt-3">
+            <label>ID/名前</label>
             <input class="login-name" type="text" placeholder="ID/Name"><br>
-            <input class="login-pass" type="text" placeholder="Password"><br><br>
-            <a class="button" th:href="@{home}">Login</a>
+            </div>
+            
+            <div class="mt-3">
+            <label>パスワード</label>
+            <input class="login-pass" type="password" placeholder="Password"><br>
+            </div>
+            
+            <div class="mt-3">
+            <button  th:href="@{home}">Login</button>
+            </div>
+            
           <div class=aaaaaa>
           <a class="new" th:href="@{usercreate}">新規登録</a>
           </div>
