@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout(~{::title},~{::body})}">
+<html xmlns:th="http://www.thymeleaf.org" ><!--th:replace="~{fragments/layout :: layout(~{::title},~{::body})}">-->
 <head>
  <meta charset="UTF-8">
  <title>認証画面</title>
@@ -20,13 +20,13 @@
             <label for="operater">管理者</label><br>
             
             <div class="mt-3">
-            <label>ID/名前</label>
-            <input class="login-name" type="text" placeholder="ID/Name"><br>
+            <label for="usernameInput">ID/名前</label>
+            <input class="login-name" type="text" id="usernameInput" placeholder="ID/Name"><br>
             </div>
             
             <div class="mt-3">
-            <label>パスワード</label>
-            <input class="login-pass" type="password" placeholder="Password"><br>
+            <label for="passwordInput">パスワード</label>
+            <input class="login-pass" type="password" id="passwordInput" placeholder="Password"><br>
             </div>
             
             <div class="mt-3">
