@@ -14,28 +14,33 @@
  <!-- コントローラ -->
 
        
-          <h1 class="mt-3"><img class="hon" src="images/book_sasshi7_black.png">ELBook</h1>
+          <h1 class="mt-3"><img class="hon" src="images/book_sasshi7_black.png">ELBOOK</h1>
           
-            <input type="checkbox" name="operater" value="管理者" class="operater">
-            <label for="operater">管理者</label><br>
+                 <input type="checkbox" name="operater" id="operater" value="管理者" class="check-operater">
+                 <label for="operater">管理者</label><br><br>
             
-            <div class="mt-3">
-            <label for="usernameInput">ID/名前</label>
-            <input class="login-name" type="text" id="usernameInput" placeholder="ID/Name"><br>
-            </div>
             
-            <div class="mt-3">
-            <label for="passwordInput">パスワード</label>
-            <input class="login-pass" type="password" id="passwordInput" placeholder="Password"><br>
-            </div>
+            <form action="#" th:action="@{/login}" method="post">
             
-            <div class="mt-3">
-            <button  th:href="@{home}">Login</button>
-            </div>
+                <div class="mt-3">
+                    <label for="usernameInput" class="form-label">ID/名前</label><br>
+                    <input  type="text" id="usernameInput" class="form-control" name="username" placeholder="ID/Name"><br>
+                </div>
             
-          <div class=aaaaaa>
-          <a class="new" th:href="@{usercreate}">新規登録</a>
-          </div>
+                <div class="mt-3">
+                    <label for="passwordInput" class="form-label">パスワード</label><br>
+                    <input  type="password" id="passwordInput" class="form-control" name="password" placeholder="Password"><br><br>
+                </div>
+             
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+               
+            </form><br>
+            
+                <div class="mt-3">
+                    <input type="submit" class="btn btn-newuser" name="UserCreate" valeu>
+                </div>
 
 
       </div>

@@ -52,13 +52,6 @@ public class UserController {
 	}
 	
 
-    //   ユーザー情報の削除処理
-//	@GetMapping("/delete/{user_id}")
-// 	public String userDelete(@PathVariable int user_id,Model model) {
-//		 model.addAttribute("TargetUser", userService.targetuser(user_id));
-//		 System.out.println("ユーザーID[ "+ user_id +" ]を/deleteに渡して削除に移行します");
-//		 return "userinfo";
-//     }
 
 	//   ユーザー情報の編集処理
 	@GetMapping("/useredit/{user_id}")
@@ -85,20 +78,6 @@ public class UserController {
 		return "mypage";
 	}
 
-    //編集画面に遷移
-//	@GetMapping("/useredit")
-//	public String moveUseredit(@ModelAttribute("user_edit") UserList useList) {
-//		System.out.println("編集画面に遷移しました");
-//		return "useredit";
-//	}
-
-
-	 //テスト用
-	@GetMapping("/Test")
-	public String moveTest(@ModelAttribute UserList useList) {
-		System.out.println("テスト");
-		return "Test";
-	}
 
              //新規登録機能（ユーザーとパスワードを登録できる）
 	@PostMapping("/usercreate")
@@ -130,6 +109,14 @@ public class UserController {
 //	       System.out.println("社員一覧画面に遷移しました");
 //	       return "userinfo";
 //	}
+	
+	
+	 //テスト用
+	@GetMapping("/Test")
+	public String moveTest(@ModelAttribute UserList useList) {
+		System.out.println("テスト");
+		return "Test";
+	}
 
 }
 
