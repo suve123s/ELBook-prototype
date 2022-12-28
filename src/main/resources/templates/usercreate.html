@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-  <meta charset="UTF-8">
-  <title>新規登録画面</title>
-  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
+
+<head>
+	<meta charset="UTF-8">
+	<title>新規登録画面</title>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 </head>
+
 <body>
 
-  <div id="touroku-home" class="ttttt-big">
+	<div id="touroku-home" class="ttttt-big">
 
-      <h4 class ="ideeee">新規登録画面</h4>
-      <form th:action="@{/usercreate}"  class="user-create" method="post">
-      <div class="aaaa">
-         <input class="nameee" type="text" name="user_name" id="user_name" placeholder="Name"><br>
-      </div>
-      <div class="aaaa">
-         <input class="newpass" type="text" name="pass" id="pass" placeholder="NewPassword"><br><br>
-      </div>
-         <button type="submit" class="bottom-bbb">登録</button>
-     </form>
-  </div>
+		<h4 class="ideeee">新規登録画面</h4>
+		<form th:action="@{/usercreate}" class="user-create" method="post">
+			<div class="mt-3">
+				<label class="form-label">ID/名前</label><br>
+				<input type="text" id="user_name" class="form-control" name="user_name" placeholder="ID/Name"><br>
+			</div>
+
+			<div class="mt-3">
+				<label class="form-label">パスワード</label><br>
+				<input type="text" id="pass" class="form-control" name="pass"
+					placeholder="Password"><br><br>
+			</div>
+
+			<div class="mt-3">
+				<button type="submit" class="btn btn-create">登録</button>
+			</div>
+		</form>
+	</div>
 
 </body>
+
 </html>

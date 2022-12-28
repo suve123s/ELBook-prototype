@@ -1,48 +1,46 @@
-
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" ><!--th:replace="~{fragments/layout :: layout(~{::title},~{::body})}">-->
+<html xmlns:th="http://www.thymeleaf.org">
+<!--th:replace="~{fragments/layout :: layout(~{::title},~{::body})}">-->
+
 <head>
- <meta charset="UTF-8">
- <title>認証画面</title>
- <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
+	<meta charset="UTF-8">
+	<title>認証画面</title>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 </head>
 
- <body>
- <div class="kkkk">
+<body>
 
- <!--th:href=@{ｘｘ}でxxに遷移する -->
- <!-- コントローラ -->
+	<!--th:href=@{ｘｘ}でxxに遷移する -->
+	<!-- コントローラ -->
 
-       
-          <h1 class="mt-3"><img class="hon" src="images/book_sasshi7_black.png">ELBOOK</h1>
-          
-                 <input type="checkbox" name="operater" id="operater" value="管理者" class="check-operater">
-                 <label for="operater">管理者</label><br><br>
-            
-            
-            <form action="#" th:action="@{/login}" method="post">
-            
-                <div class="mt-3">
-                    <label for="usernameInput" class="form-label">ID/名前</label><br>
-                    <input  type="text" id="usernameInput" class="form-control" name="username" placeholder="ID/Name"><br>
-                </div>
-            
-                <div class="mt-3">
-                    <label for="passwordInput" class="form-label">パスワード</label><br>
-                    <input  type="password" id="passwordInput" class="form-control" name="password" placeholder="Password"><br><br>
-                </div>
-             
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </div>
-               
-            </form><br>
-            
-                <div class="mt-3">
-                    <input type="submit" class="btn btn-newuser" name="UserCreate" valeu>
-                </div>
+	<h1 class="mt-3">ELBOOK</h1>
 
+	<div th:if="${param.error}">
+		<p>ID/名前もしくはパスワードが違います</p>
+	</div>
+	<form action="#" th:action="@{/login}" method="post">
 
-      </div>
-   </body>
+		<div class="mt-3">
+			<label for="usernameInput" class="form-label">ID/名前</label><br>
+			<input type="text" id="usernameInput" class="form-control" name="username" placeholder="ID/Name"><br>
+		</div>
+
+		<div class="mt-3">
+			<label for="passwordInput" class="form-label">パスワード</label><br>
+			<input type="password" id="passwordInput" class="form-control" name="password"
+				placeholder="Password"><br><br>
+		</div>
+
+		<div class="mt-3">
+			<button type="submit" class="btn btn-primary">Login</button>
+		</div>
+
+	</form><br>
+
+	<div class="mt-3">
+		<a type="submit" class="create-user" th:href="@{usercreate}">新規登録</a>
+	</div>
+
+</body>
+
 </html>

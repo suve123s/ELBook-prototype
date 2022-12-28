@@ -1,47 +1,59 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="UTF-8">
-<title>ホーム画面</title>
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
+	<meta charset="UTF-8">
+	<title>ホーム画面</title>
+	<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/style.css">
 </head>
+
 <body>
-   <div>
-       <div class="home">
-        <h3>ELBook</h3>
-        <a class="home-mypage" th:href="@{mypage}">マイページ</a><br>
-        <a class="home-userinfo" th:href="@{userinfo}">社員一覧</a><br>
-        <a class="home-booklist" th:href="@{bookinfo}">書籍一覧</a><br>
-        <input class="login-name" type="text" placeholder="書籍ID/書籍名"><br>
-        <a class="home-select" th:href="@{usercreate}">検索</a>
-        </div><br>
+	<div>
+		<div class="home">
+			<h3>ELBook</h3>
+			<ul>
+				<li><a class="home-mypage" th:href="@{mypage}">マイページ</a></li>
+				<li><a class="home-userinfo" th:href="@{userinfo}">社員一覧</a></li>
+				<li><a class="home-booklist" th:href="@{bookinfo}">書籍一覧</a></li>
+				<li><a class="home-logout" th:href="@{login}">ログアウト</a></li>
+			</ul>
+			<input class="login-name" type="text" placeholder="書籍ID/書籍名"><br>
+			<a class="home-select" th:href="@{usercreate}">検索</a>
+		</div><br>
 
 
 
-        <div class="book-mune">
-            <div class="item">
-              <a>IT技術</a>
-            </div >
-            <div class="item">
-              <a>スポーツ</a>
-            </div >
-            <div class="item">
-              <a>エンタメ</a>
-            </div>
-            <div class="item">
-              <a>教養</a>
-            </div>
-            <div class="item">
-              <a>メンタル</a>
-            </div>
-            <div class="item">
-              <a>パズル</a>
-            </div>
+		<ul class="book-mune">
+
+			<li class="item">
+				<a>IT技術</a>
+			</li>
+
+			<li class="item">
+				<a>スポーツ</a>
+			</li>
+
+			<li class="item">
+				<a>エンタメ</a>
+			</li>
+
+			<li class="item">
+				<a>教養</a>
+			</li>
+
+			<li class="item">
+				<a>メンタル</a>
+			</li>
+
+			<li class="item">
+				<a>パズル</a>
+			</li>
+
+		</ul><br><br>
 
 
 
-        </div>
-
-   </div>
+	</div>
 </body>
+
 </html>
