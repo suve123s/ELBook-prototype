@@ -1,14 +1,28 @@
 package com.example.demo.Entity;
 
+
+
+import org.springframework.validation.annotation.Validated;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
+@AllArgsConstructor
+@Validated
 public class UserList {
 
 
 	private int user_id;
+	
+	@NotBlank
+	@UniqueUsername
 	private String user_name;
+	
+	@NotBlank
+	@Size(min = 4 ,max=4)
 	private String pass;
+	
 	private int operator;
 	
 

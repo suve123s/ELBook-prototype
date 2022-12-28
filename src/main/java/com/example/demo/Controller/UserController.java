@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -89,7 +90,7 @@ public class UserController {
 
              //新規登録機能（ユーザーとパスワードを登録できる）
 	@PostMapping("/usercreate")
-	public String userCreate (@ModelAttribute UserList userList) {
+	public String userCreate (@ModelAttribute @Validated UserList userList) {
 		userService.create(userList);
 		System.out.println("登録処理が完了しました");
 		return "login";

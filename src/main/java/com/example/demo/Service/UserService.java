@@ -13,12 +13,13 @@ import lombok.Data;
 
 @Data
 @Service
+
 public class UserService {
 
 	@Autowired
 	UserMapper userMapper;
 
-
+    
 	public void create(UserList userList) {
 		userMapper.create(userList);
 		System.out.println("[ " + userList + " ]について登録処理しています");
